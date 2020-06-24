@@ -26,9 +26,20 @@ require_once ("config.php");
 // $search = Usuario::search ( "jo" );
 // echo json_encode ( $search );
 
-// Carregando um usuario usando login e senha
+// Carregando um usuario usando login e senha (NÃO FUNCIONOU)
+// $usuario = new Usuario ();
+// $usuario->login ( "joao", "32165" );
+// echo $usuario;
+
+// Aula 66 Insert inserindo um usuario
+// $aluno = new Usuario ( "aluno", "@lun0" );
+// $aluno->insert ();
+// echo $aluno;
+
+// Aula 67 update atualizando dados usuario
 $usuario = new Usuario ();
-$usuario->login ( "joao", "32165" );
+$usuario->loadByID ( 8 );
+$usuario->update ( "professor", "!@#$%^&" );
 echo $usuario;
 
 ?>
