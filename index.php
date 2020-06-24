@@ -37,9 +37,18 @@ require_once ("config.php");
 // echo $aluno;
 
 // Aula 67 update atualizando dados usuario
+/*
+ * $usuario = new Usuario ();
+ * $usuario->loadByID ( 8 );
+ * $usuario->update ( "professor", "!@#$%^&" );
+ * echo $usuario;
+ */
+
+// Deletando Usuario DELETE
 $usuario = new Usuario ();
-$usuario->loadByID ( 8 );
-$usuario->update ( "professor", "!@#$%^&" );
+$usuario->loadById ( 7 );
+$usuario->delete ();
+
 echo $usuario;
 
 ?>

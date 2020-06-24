@@ -96,6 +96,19 @@ class Usuario {
 				':ID' => $this->getIdusuario ()
 		) );
 	}
+
+	// METODO DELETAR
+	public function delete() {
+		$sql = new Sql ();
+		$sql->query ( "DELETE FROM tb_usuarios WHERE idusuario = :ID", array (
+				':ID' => $this->getIdusuario ()
+		) );
+		// Zerando as infromações
+		$this->setIdusuario ( 0 );
+		$this->setDeslogin ( 0 );
+		$this->setDessenha ( 0 );
+		$this->setDtcadastro ( new DateTime () );
+	}
 	// Metodo Constutor Login e Password
 	public function __construct($login = "", $password = "") { // = " " para não afetar os outros registros, não obrigatorio
 		$this->setDeslogin ( $login );
